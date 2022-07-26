@@ -1,0 +1,58 @@
+steps for spring mvc!
+
+1) maven webapp 
+
+
+2) pom.xml
+		servlet-api 
+		core
+		bean
+		context
+		el 
+		web-mvc**
+
+
+3) folder 
+-----------------------------
+
+jsp-servlet 
+
+Signup.jsp -? submit ->  action-> SignupController=>
+request--server-->[SignupController]
+
+load class
+instance 
+init
+service
+-------------------------------
+
+spring 
+
+Signup.jsp -? submit ->  action-> SignupController=>
+request--server-->[FrontController] -> IoC --> [SignupController]
+FrontController --> DispatcherServlet 
+
+
+
+royal --> R -->frontDesk -->  
+
+royal --> parents --> tejas 
+	  student --> Samir Sir 		
+	  vendor --> dhiraj sir 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
