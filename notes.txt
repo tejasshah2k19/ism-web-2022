@@ -40,7 +40,15 @@ royal --> parents --> tejas
 	  student --> Samir Sir 		
 	  vendor --> dhiraj sir 
 
+-----------------------------------------
 
+how to create controller in spring
+
+@Controller
+class SessionController{
+	
+
+}
 
 
 
