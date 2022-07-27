@@ -23,16 +23,23 @@ public class UserController {
 		model.addAttribute("users", users);
 		return "ListUsers";
 	}
-	
-	
+
 	@GetMapping("/deleteuser")
-	public String deleteUser(@RequestParam("userId") int userId,Model model) {
+	public String deleteUser(@RequestParam("userId") int userId, Model model) {
 		userDao.deleteUser(userId);
 //		List<UserBean> users = userDao.getAllUsers(); 
 //		model.addAttribute("users",users);
 //		return "ListUsers";//call jsp 
 
-		return "redirect:/listusers";//call url 
-	
+		return "redirect:/listusers";// call url
+
 	}
+
+	@GetMapping("/viewuser")
+	public String viewUser(@RequestParam("userId") int userId,Model model) {
+		UserBean user = userDao.getUserByUserId(userId);
+		model.addAttribute("user",user); 
+		return "ViewUser";
+	}
+
 }

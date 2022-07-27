@@ -30,4 +30,10 @@ public class UserDao {
 	public void deleteUser(int userId) {
 		stmt.update("delete from users where userid = ? ",userId);
 	}
+
+	public UserBean  getUserByUserId(int userId) {
+		UserBean user = stmt.queryForObject("select * from users where userId = ?",new BeanPropertyRowMapper<UserBean>(UserBean.class),new Object[] {userId});
+		return user;
+	}
+
 }

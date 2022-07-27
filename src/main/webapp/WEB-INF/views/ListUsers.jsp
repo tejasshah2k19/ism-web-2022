@@ -36,7 +36,10 @@
 				<td>${u.email}</td>
 				<td>${u.password}</td>
 				<td>${u.userType}</td>
-				<td> <a href="deleteuser?userId=${u.userId}">Delete</a></td>
+				<td> <a href="deleteuser?userId=${u.userId}">Delete</a> 
+					| 
+					<a href="viewuser?userId=${u.userId}">View</a>
+				</td>
 			</tr>
 		</c:forEach>
 
