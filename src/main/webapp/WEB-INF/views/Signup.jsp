@@ -23,6 +23,14 @@
 		<s:errors path="firstName"></s:errors>
 		<br>
 		<br>
+		LastName: <s:input path="lastName"/>
+		<br><br>		
+	
+		Gender: Male <s:radiobutton path="gender" value="male"/>
+				Female <s:radiobutton path="gender" value="female"/>
+				
+		<br><br>
+	
 		Email : <s:input path="email" />
 		<s:errors path="email"></s:errors>
 		<br>
@@ -32,8 +40,6 @@
 		<br>
 		<br>
 		<input type="submit" value="Signup" />
-
-
 	</s:form>
 
 

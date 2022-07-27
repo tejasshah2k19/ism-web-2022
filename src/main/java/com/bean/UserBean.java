@@ -15,6 +15,10 @@ public class UserBean {
 	@NotBlank(message = "Please Enter Password")
 	String password;
 
+	String lastName;
+	String gender;
+	String userType;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -47,4 +51,28 @@ public class UserBean {
 		this.password = password;
 	}
 
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+	
 }

@@ -50,10 +50,10 @@ class SessionController{
 
 }
 
+-----------------------------------------
 
-
-
-
+1) driver - maven - pg 
+2) spring jdbc - maven 
 
 
 
