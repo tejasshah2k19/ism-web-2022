@@ -27,13 +27,19 @@ public class UserDao {
 		List<UserBean> users = stmt.query("select * from users", new BeanPropertyRowMapper<UserBean>(UserBean.class));
 		return users;
 	}
+
 	public void deleteUser(int userId) {
-		stmt.update("delete from users where userid = ? ",userId);
+		stmt.update("delete from users where userid = ? ", userId);
 	}
 
-	public UserBean  getUserByUserId(int userId) {
-		UserBean user = stmt.queryForObject("select * from users where userId = ?",new BeanPropertyRowMapper<UserBean>(UserBean.class),new Object[] {userId});
+	public UserBean getUserByUserId(int userId) {
+		UserBean user = stmt.queryForObject("select * from users where userId = ?",
+				new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { userId });
 		return user;
 	}
 
+	public void updateUser(UserBean user) {
+		stmt.update("update users set firstname = ? , lastname = ? where userid = ? ", user.getFirstName(),
+				user.getLastName(), user.getUserId());
+	}
 }
