@@ -24,6 +24,7 @@
 			<th>Email</th>
 			<th>Password</th>
 			<th>UserType</th>
+			<th>Action</th>
 		</tr>
 
 		<c:forEach items="${users}" var="u">
@@ -35,7 +36,7 @@
 				<td>${u.email}</td>
 				<td>${u.password}</td>
 				<td>${u.userType}</td>
-
+				<td> <a href="deleteuser?userId=${u.userId}">Delete</a></td>
 			</tr>
 		</c:forEach>
 
