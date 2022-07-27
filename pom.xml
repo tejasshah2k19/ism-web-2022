@@ -45,6 +45,11 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.4.0</version>
 		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>ism-web-2022</finalName>
