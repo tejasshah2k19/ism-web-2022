@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.validation.BeanPropertyBindingResult;
 
+import com.bean.LoginBean;
 import com.bean.UserBean;
 
 @Repository // spring.xml map -> spring bean
@@ -42,4 +43,18 @@ public class UserDao {
 		stmt.update("update users set firstname = ? , lastname = ? where userid = ? ", user.getFirstName(),
 				user.getLastName(), user.getUserId());
 	}
+
+	public UserBean authenticate(LoginBean loginBean) {
+		UserBean user = null;
+
+		try {
+		user = stmt.queryForObject("select * from users where email = ? and password = ? ",
+				new BeanPropertyRowMapper<UserBean>(UserBean.class),
+				new Object[] { loginBean.getEmail(), loginBean.getPassword() });
+		}catch(Exception e) {
+			System.out.println("invalid email password");
+		}
+		return user;
+	}
+
 }

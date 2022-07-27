@@ -19,8 +19,7 @@ import com.dao.UserDao;
 @Controller
 public class SessionController {
 
-	
-	@Autowired //ioc => getBean()
+	@Autowired // ioc => getBean()
 	UserDao userDao;
 	// jsp load method - url
 
@@ -41,11 +40,11 @@ public class SessionController {
 			model.addAttribute("user", user);
 			return "Signup";
 		} else {
-			 user.setUserType("customer");
-			 userDao.addUser(user);
-			 model.addAttribute("msg","Signup done..");
-			 return "Login";
-			 		
+			user.setUserType("customer");
+			userDao.addUser(user);
+			model.addAttribute("msg", "Signup done..");
+			return "Login";
+
 		}
 	}
 
@@ -55,9 +54,19 @@ public class SessionController {
 	}
 
 	@PostMapping("/login")
-	public String authenticate(LoginBean login) {
-
-		return "Home";
+	public String authenticate(LoginBean login,Model model) {
+		UserBean user = userDao.authenticate(login);
+		if(user == null) {
+			model.addAttribute("msg","InvalidCredentials");
+			return "Login";
+		}else if(user.getUserType().contentEquals("customer")) {
+			return "Home";
+		}else if(user.getUserType().contentEquals("admin")) {
+			return "Dashboard";
+		}else {
+			model.addAttribute("msg","Please Contact Admin");
+			return "Login";
+		}
 	}
 }
 

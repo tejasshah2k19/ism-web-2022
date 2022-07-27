@@ -62,8 +62,42 @@ SearchUser.jsp
  
 [  r    ] 
 [  ta   ] 
+
+insert
+list
+view
+delete
+update 
+
+login 
  
 -----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
