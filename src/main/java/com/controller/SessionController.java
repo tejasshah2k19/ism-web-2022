@@ -1,5 +1,6 @@
 package com.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,17 +55,19 @@ public class SessionController {
 	}
 
 	@PostMapping("/login")
-	public String authenticate(LoginBean login,Model model) {
+	public String authenticate(LoginBean login, Model model, HttpSession session) {
 		UserBean user = userDao.authenticate(login);
-		if(user == null) {
-			model.addAttribute("msg","InvalidCredentials");
+		if (user == null) {
+			model.addAttribute("msg", "InvalidCredentials");
 			return "Login";
-		}else if(user.getUserType().contentEquals("customer")) {
+		} else if (user.getUserType().contentEquals("customer")) {
+			session.setAttribute("user", user);
 			return "Home";
-		}else if(user.getUserType().contentEquals("admin")) {
+		} else if (user.getUserType().contentEquals("admin")) {
+			session.setAttribute("user", user);
 			return "Dashboard";
-		}else {
-			model.addAttribute("msg","Please Contact Admin");
+		} else {
+			model.addAttribute("msg", "Please Contact Admin");
 			return "Login";
 		}
 	}
