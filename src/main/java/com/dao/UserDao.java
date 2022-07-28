@@ -25,7 +25,7 @@ public class UserDao {
 
 	public List<UserBean> getAllUsers() {
 
-		List<UserBean> users = stmt.query("select * from users", new BeanPropertyRowMapper<UserBean>(UserBean.class));
+		List<UserBean> users = stmt.query("select * from users", new BeanPropertyRowMapper<UserBean>(UserBean.class));//map db row to userbean 		
 		return users;
 	}
 
@@ -35,7 +35,7 @@ public class UserDao {
 
 	public UserBean getUserByUserId(int userId) {
 		UserBean user = stmt.queryForObject("select * from users where userId = ?",
-				new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { userId });
+				new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { userId });//map db row to userbean 
 		return user;
 	}
 

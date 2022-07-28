@@ -76,6 +76,14 @@ login
 2) input type file 
 3) commons-fileupload , commons-io 
 4) configuration - multipart 
+   create resources folder inside webapp 
+   create images folder inside resources 
+   <mvc:resources location="/resources/" mapping="/resources/**"/>
+   
+5) store that file into webserver 
+6) store webserver path in database 
+
+
 
 
 
