@@ -11,7 +11,9 @@
 
 
 <a href="setsecquestion">SecurityQuestion</a>
-<a href="Logout">Logout</a>
+| <a href="logout">Logout</a>
+| <a href="newprofile">New Profile</a>
+
 <br><br>
 
 ${msg }

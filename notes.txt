@@ -72,7 +72,10 @@ update
 login 
  
 -----------------------------------------
-
+1) form method post enctype multiparformdata 
+2) input type file 
+3) commons-fileupload , commons-io 
+4) configuration - multipart 
 
 
 
